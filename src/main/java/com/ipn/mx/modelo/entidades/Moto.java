@@ -68,19 +68,19 @@ public class Moto implements Serializable{/**
 	}
 	
 	@JsonIgnoreProperties(
-			value={"idSistemaControl", 
+			value={"idMoto", 
 					"hibernateLazyInitializer", 
 					"handler"},
 			allowSetters=true)
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idSistemaControl", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idMoto", cascade = CascadeType.ALL)
 	private Set<Entrada> entradas = new HashSet<>();
 	
 	@JsonIgnoreProperties(
-			value={"idSistemaControl", 
+			value={"idMoto", 
 					"hibernateLazyInitializer", 
 					"handler"},
 			allowSetters=true)
-	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idSistemaControl", cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "idMoto", cascade = CascadeType.ALL)
 	private Set<Salida> salidas = new HashSet<>();
 
 

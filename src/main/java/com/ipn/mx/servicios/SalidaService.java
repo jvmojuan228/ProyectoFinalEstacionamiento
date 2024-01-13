@@ -1,6 +1,5 @@
 package com.ipn.mx.servicios;
 
-import java.io.ByteArrayInputStream;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
@@ -19,5 +18,4 @@ public interface SalidaService {
 	//Recuperar las Categorias
 	public List<Moto> findAllMoto();
 	
-	public ByteArrayInputStream reporteSalidas(List<Salida> salidas);
 }

@@ -15,9 +15,9 @@ public interface MotoRepository extends JpaRepository<Moto, Long>{
 	@Query("from Usuario")
 	public List<Usuario> findAllUsers();
 	
-	@Query("select e from Entrada e where e.idMoto like ?1")
+	@Query("select e from Entrada e where e.idMoto = ?1")
 	public List<Entrada> findEntradas(long idMoto);
 	
-	@Query("select s from Entrada s where s.idMoto like ?1")
+	@Query("select s from Entrada s where s.idMoto = ?1")
 	public List<Entrada> findSalidas(long idMoto);
 }

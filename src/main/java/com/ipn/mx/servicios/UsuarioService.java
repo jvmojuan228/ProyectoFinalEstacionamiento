@@ -12,8 +12,8 @@ public interface UsuarioService {
 	public Usuario findById(Long id);
 	public Usuario save(Usuario usuario);
 	public void delete(Long id);
-	public List<Moto> findAllMoto();
+	public List<Moto> findAllMoto(long idUsuario);
 	
-	public ByteArrayInputStream reporteMoto(List<Moto> moto);
+	public ByteArrayInputStream reporteMoto(List<Moto> motos);
 	public ByteArrayInputStream reporteUsuarios(List<Usuario> usuario);
 }

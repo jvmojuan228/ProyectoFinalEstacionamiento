@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.ipn.mx.modelo.entidades.Entrada;
 import com.ipn.mx.modelo.entidades.Moto;
+import com.ipn.mx.modelo.entidades.Salida;
 import com.ipn.mx.modelo.entidades.Usuario;
 
 
@@ -18,6 +19,7 @@ public interface MotoRepository extends JpaRepository<Moto, Long>{
 	@Query("select e from Entrada e where e.idMoto = ?1")
 	public List<Entrada> findEntradas(long idMoto);
 	
-	@Query("select s from Entrada s where s.idMoto = ?1")
-	public List<Entrada> findSalidas(long idMoto);
+	@Query("select s from Salida s where s.idMoto = ?1")
+	public List<Salida> findSalidas(long idMoto);
+	
 }

@@ -2,6 +2,7 @@ package com.ipn.mx.servicios;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -11,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ipn.mx.modelo.entidades.Moto;
 import com.ipn.mx.modelo.entidades.Usuario;
+import com.ipn.mx.modelo.repositorios.MotoRepository;
 import com.ipn.mx.modelo.repositorios.UsuarioRepository;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -30,6 +32,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 
 	@Autowired
 	UsuarioRepository dao;
+	
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -58,7 +61,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	@Transactional
 	public List<Moto> findAllMoto(long idUsuario) {
-		return dao.findMotos(idUsuario);
+		return new ArrayList<Moto>(dao.findById(idUsuario).orElse(null).getMotos());
 	}
 
 	@Override

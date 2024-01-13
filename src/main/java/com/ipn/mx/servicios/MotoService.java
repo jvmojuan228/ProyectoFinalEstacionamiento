@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import com.ipn.mx.modelo.entidades.Entrada;
 import com.ipn.mx.modelo.entidades.Moto;
-import com.ipn.mx.modelo.entidades.Salida;
 import com.ipn.mx.modelo.entidades.Usuario;
 
 public interface MotoService {
@@ -22,6 +20,6 @@ public interface MotoService {
 		
 	public ByteArrayInputStream reporteMotos(List<Moto> moto);
 	
-	public ByteArrayInputStream reporteMoto(List<Entrada> entradas, List<Salida> salidas);
+	public ByteArrayInputStream reporteMoto(long id);
 	
 }

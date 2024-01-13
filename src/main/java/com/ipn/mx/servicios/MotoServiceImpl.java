@@ -2,6 +2,7 @@ package com.ipn.mx.servicios;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -135,7 +136,9 @@ public class MotoServiceImpl implements MotoService {
 	}
 
 	@Override
-	public ByteArrayInputStream reporteMoto(List<Entrada> entradas, List<Salida> salidas) {
+	public ByteArrayInputStream reporteMoto(long id) {
+		List<Entrada> entradas = new ArrayList<Entrada>(dao.findById(id).orElse(null).getEntradas());
+		List<Salida> salidas = new ArrayList<Salida>(dao.findById(id).orElse(null).getSalidas());
 		Document documento = new Document();
 		ByteArrayOutputStream respuesta = new ByteArrayOutputStream();
 		try {

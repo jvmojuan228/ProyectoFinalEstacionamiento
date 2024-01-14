@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @Entity
-@Table(name="Moto")
+@Table(name="Moto", schema = "public")
 public class Moto implements Serializable{/**
 	 * 
 	 */

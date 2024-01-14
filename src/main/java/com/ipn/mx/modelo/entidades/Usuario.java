@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 @Entity
-@Table(name="Usuarios")
+@Table(name="Usuarios", schema = "public")
 public class Usuario implements Serializable {
 
 	/**

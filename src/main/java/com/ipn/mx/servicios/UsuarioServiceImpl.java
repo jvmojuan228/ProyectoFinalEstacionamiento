@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ipn.mx.modelo.entidades.Moto;
 import com.ipn.mx.modelo.entidades.Usuario;
-import com.ipn.mx.modelo.repositorios.MotoRepository;
 import com.ipn.mx.modelo.repositorios.UsuarioRepository;
 import com.itextpdf.text.BaseColor;
 import com.itextpdf.text.Chunk;
@@ -37,7 +36,7 @@ public class UsuarioServiceImpl implements UsuarioService{
 	@Override
 	@Transactional(readOnly = true)
 	public List<Usuario> findAll() {
-		return dao.findAll();
+		return (List<Usuario>)dao.findAll();
 	}
 
 	@Override

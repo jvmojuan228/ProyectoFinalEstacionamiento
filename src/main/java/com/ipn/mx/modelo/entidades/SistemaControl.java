@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Getter
 @Entity
-@Table(name="SistemaControl")
+@Table(name="SistemaControl", schema = "public")
 public class SistemaControl implements Serializable{/**
 	 * 
 	 */

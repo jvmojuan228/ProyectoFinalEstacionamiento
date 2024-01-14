@@ -35,7 +35,7 @@ public class UsuarioController {
 	
 	@GetMapping("/usuarios")
 	public List<Usuario> readAll() {
-		return service.findAll();
+		return (List<Usuario>)service.findAll();
 	}
 
 	@PostMapping("/usuarios")
